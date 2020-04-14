@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\DosenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('master');
+    return view('welcome');
 });
-Route::get('/blog', 'webController@blog');
-Route::get('/contact', 'webController@contact');
-Route::get('/about', 'webController@about');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

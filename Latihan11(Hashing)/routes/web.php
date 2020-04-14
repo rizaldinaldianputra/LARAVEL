@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\DosenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
-Route::get('/blog', 'webController@blog');
-Route::get('/contact', 'webController@contact');
-Route::get('/about', 'webController@about');
+Route::get('/', 'DikiController@hash');
